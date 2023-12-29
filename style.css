@@ -1,0 +1,34 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(90, 230, 255);
+}
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    width: 960px;
+    height: 960px;
+    background-color: white;
+
+    justify-content: center;
+    align-items: stretch;
+    align-content: stretch;
+}
+
+.square {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    min-width: 60px;
+    min-height: 60px;
+
+}
+#number-of-squares {
+    margin-bottom: 10px;
+}
