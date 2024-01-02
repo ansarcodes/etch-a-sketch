@@ -2,7 +2,7 @@ const container = document.querySelector("#container");
 const input = document.querySelector("input");
 const buttonSet = document.querySelector("button#set");
 const buttonReset = document.querySelector("button#reset");
-const allChildren = document.querySelectorAll(".square");
+const heading = document.querySelector("h1");
 
 
 function setGrid() {
@@ -15,14 +15,19 @@ function setGrid() {
         square.style.flexBasis = squareFlexBasis + "px";
         container.appendChild(square);
         square.addEventListener("mouseover", () => {
-            square.style.backgroundColor = "red";
+            square.style.backgroundColor = `rgb(${Math.floor(Math.random()*255)}, ${Math.floor(Math.random()*255)}, ${Math.floor(Math.random()*255)})`;
         })
     }
-    
+
 }
 
 setGrid();
 
 buttonSet.addEventListener("click", () => {
-    setGrid();
+    if (Number(input.value) >= 16 && Number(input.value) <= 100) {
+        heading.textContent =  "Press button again to reset!";
+        setGrid();
+    } else {
+        heading.textContent =  "Wrong number! (min: 16, max: 100)";
+    }
 })
